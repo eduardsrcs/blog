@@ -1,0 +1,46 @@
+body{
+  background-color: #ccc;
+}
+
+#tmcontrols{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#moviewrap{
+  width: 320px;
+  margin: 0 auto;
+}
+
+#tmswitch{
+  width: 100px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 40px;
+  text-align: center;
+  background-color: #777;
+  color: #555;
+  border: 1px solid green;
+  border-radius: 10px;
+}
+#tmswitch.active{
+  color: #ff0;
+  text-shadow: 0 0 10px rgba(255, 255, 0, .7);
+  border: 1px solid #9f9;
+}
+
+#settime{
+  font-size: 32px;
+  user-select: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tmbuttons{
+  display: flex;
+  justify-content: space-between;
+}
+.tmbuttons button{
+  width: 40px;
+}
