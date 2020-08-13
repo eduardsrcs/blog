@@ -21,7 +21,9 @@ Route::get('/tm', function () { return view('tm');});
 
 Route::get('/posts', 'PostsController@posts');
 // Route::get('/posts/{$id}', 'PostsController@post');
+Route::get('/newpostform', function () { return view('newpostform'); });
 Route::get('/posts/{id}', 'PostsController@post');
+Route::post('/storepost', 'PostsController@storePost')->name('post.upload');
 
 Route::get('/files', function () { return view('files'); });
 Route::post('/files/upload', 'ImageController@upload')->name('image.upload');

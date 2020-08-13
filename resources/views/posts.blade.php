@@ -14,9 +14,8 @@
 
   @foreach($posts as $post)
       <div class="w3-card-4 w3-margin w3-white">
-
         @if(!empty($post->pic))
-          <img src="/assets/img/{{$post->pic}}" alt="Nature" style="width:100%">
+          <img src="{{ asset('/storage/' . $post->pic) }}" alt="Nature" style="width:100%">
         @endif
 
         <div class="w3-container">
@@ -59,7 +58,7 @@
         <li class="w3-padding-16">
 
           @if(!empty($post->pic))
-            <img src="/assets/img/{{$post->pic}}" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <img src="/storage/{{$post->pic}}" alt="Image" class="w3-left w3-margin-right" style="width:50px">
           @endif
 
             <span class="w3-large">{{$post->title}}</span><br>
@@ -85,9 +84,8 @@
 @endsection
 
 @section('footer')
-    <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-    <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next &raquo;</button>
     <a href="/tm" target="blank"><button class="w3-button w3-black w3-padding-large w3-margin-bottom">Timer &raquo;</button></a>
     <a href="/cv" target="blank"><button class="w3-button w3-black w3-padding-large w3-margin-bottom">My cv &raquo;</button></a>
+    <a href="/newpostform" ><button class="w3-button w3-black w3-padding-large w3-margin-bottom">Add post &raquo;</button></a>
     <p>Powered by <a href="#" target="_blank">{{'Eduards'}}</a></p>
 @endsection
