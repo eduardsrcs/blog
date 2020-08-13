@@ -17,7 +17,9 @@
   @endif
   <p>{{$post->created_at}}</p>
   <p>{{$post->content}}</p>
-  <a href="/posts">Back to posts</a>
+  <a href="/posts" class="w3-button w3-blue w3-padding-large w3-margin-bottom">Back to posts</a>
+  <a href="/post/update/{{$post->id}}" class="w3-button w3-grey w3-padding-large w3-margin-bottom">Update this posts</a>
+  <a href="/post/remove/{{$post->id}}" class="w3-button w3-red w3-padding-large w3-margin-bottom">Remove this posts</a>
 @endsection
 
 @section('aboutCard')

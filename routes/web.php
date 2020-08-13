@@ -25,5 +25,10 @@ Route::get('/newpostform', function () { return view('newpostform'); });
 Route::get('/posts/{id}', 'PostsController@post');
 Route::post('/storepost', 'PostsController@storePost')->name('post.upload');
 
+Route::get('/post/remove/{id}', 'PostsController@remove');
+Route::get('/post/update/{id}', 'PostsController@updateForm');
+Route::post('/updatepost', 'PostsController@updatePost')->name('post.update');
+
+
 Route::get('/files', function () { return view('files'); });
 Route::post('/files/upload', 'ImageController@upload')->name('image.upload');

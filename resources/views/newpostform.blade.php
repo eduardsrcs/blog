@@ -12,12 +12,12 @@
     </div>
     <div class="row mt-4    ">
         <div class="col-md-8 bg-dark text-white py-3 rounded">
-            <form action="{{ route('post.upload')}}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('post.upload')}}" method="post" enctype="multipart/form-data" onsubmit="return validateForm1()" name="myform">
                 {{ csrf_field() }}
 
                 <div class="form-group">
                     <label for="pname">Here write a name of post</label>
-                    <input type="text" class="form-control" id="pname" name="pname">
+                    <input type="text" class="form-control" id="pname" name="pname" required minlength="4">
                     <small id="emailHelp" class="form-text text-muted">Text</small>
                 </div>
                 <div class="form-group">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="pcontent">Here write a content</label>
-                    <textarea class="form-control" id="pcontent" name="pcontent"></textarea>
+                    <textarea class="form-control" id="pcontent" name="pcontent" required minlength="10"></textarea>
                     <small id="emailHelp" class="form-text text-muted">Text</small>
                 </div>
                 <div class="form-group">
@@ -56,6 +56,20 @@
         <a class="btn btn-info" href="/posts">Back to posts...</a>
     </div>
 </div>
-
+<script>
+    function validateForm1(e){}
+    function validateForm(e){
+        return true
+        var myForm = document.forms.myform
+        if(document.forms.myform.pname.value.length < 4
+            || document.forms.myform.psdedc.value.length < 16
+            || document.forms.myform.pcontent.value.length < 36
+        ) {
+            alert('Not valid data');
+            return false
+        }
+    }
+    // console.log(myForm)
+</script>
 </body>
 </html>

@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
-use function PHPSTORM_META\type;
-
-// use Illuminate\Http\Request;
+// use function PHPSTORM_META\type;
 
 class PostsController extends Controller
 {
@@ -25,6 +22,37 @@ class PostsController extends Controller
         return view('post', compact('post'));
     }
 
+    public function remove($id)
+    {
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect('posts');
+    }
+
+    public function updateForm($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('updateform', compact('post'));
+    }
+
+    public function updatePost(Request $request)
+    {   
+        $post = Post::findOrFail($request->post('id'));
+        $post->title = $request->post('pname');
+        $post->title_desc = $request->post('psdedc');
+        $post->rating = 0;
+        $post->content = $request->post('pcontent');
+        if ($request->file('image') !== null){
+            $path = $request->file('image')->store('uploads', 'public');
+            $post->pic = $path;
+        } else {
+            $path = null;
+        }
+        
+        $post->save();
+        return redirect('posts');
+    }
+
     public function storePost(Request $request)
     {
         date_default_timezone_set('Europe/Riga');
@@ -32,8 +60,6 @@ class PostsController extends Controller
         $post = new Post;
         $post->title = $request->post('pname');
         $post->title_desc = $request->post('psdedc');
-        $post->created_at = $t;
-        $post->updated_at = $t;
         $post->rating = 0;
         $post->content = $request->post('pcontent');
         if ($request->file('image') !== null){
@@ -42,6 +68,7 @@ class PostsController extends Controller
             $path = null;
         }
         $post->pic = $path;
+        
         $post->save();
         return redirect('posts');
     }
