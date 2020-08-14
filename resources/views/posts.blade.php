@@ -27,10 +27,10 @@
           <p>{{$post->content}}</p>
           <div class="w3-row">
             <div class="w3-col m8 s12">
-              <p><b><a  class="w3-button w3-padding-large w3-white w3-border" href="/posts/{{$post->id}}">READ MORE &raquo;</a></b</p>
+              <p><b><a  class="w3-button w3-padding-large w3-white w3-border w3-left w3-margin" href="/posts/{{$post->id}}">READ MORE &raquo;</a></b</p>
             </div>
             <div class="w3-col m4 w3-hide-small">
-              <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-tag">{{$post->comments}}</span></span></p>
+              <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-tag">{{$post->ccount}}</span></span></p>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Comment;
 
 // use function PHPSTORM_META\type;
 
@@ -13,6 +14,9 @@ class PostsController extends Controller
     public function posts()
     {
       $posts = Post::all();
+      foreach($posts as $post){
+        $post->ccount = count(Comment::where('post_id', $post->id)->get());
+      }
       return view('posts', compact('posts'));
     }
 

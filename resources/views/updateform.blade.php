@@ -28,7 +28,7 @@
           </div>
           <div class="form-group">
               <label for="pcontent">Here write a content</label>
-              <textarea class="form-control" id="pcontent" name="pcontent" required minlength="10">{{$post->content}}"</textarea>
+              <textarea class="form-control" id="pcontent" name="pcontent" required minlength="10" rows="4">{{$post->content}}</textarea>
               <small id="emailHelp" class="form-text text-muted">Text</small>
           </div>
           <div class="form-group">
