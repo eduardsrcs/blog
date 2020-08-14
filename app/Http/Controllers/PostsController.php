@@ -23,7 +23,8 @@ class PostsController extends Controller
     public function post($id)
     {
         $post = Post::findOrFail($id);
-        return view('post', compact('post'));
+        $comments = Comment::where('post_id', $post->id)->get();
+        return view('post', compact('post', 'comments'));
     }
 
     public function remove($id)
