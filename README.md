@@ -26,3 +26,13 @@ Laravel has the most extensive and thorough [documentation](https://laravel.com/
 **[Laracasts](https://laracasts.com)** can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript.
 
 ## [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Some another resources
+
+[PHP Standards Recommendations](https://www.php-fig.org/psr/) &mdash; According to the [PSR Workflow Bylaw](https://www.php-fig.org/bylaws/psr-workflow) each PSR has a status as it is being worked on. Once a proposal has passed the Entrance Vote it will be listed here as “Draft”. Unless a PSR is marked as “Accepted” it is subject to change. Draft can change drastically, but Review will only have minor changes.
+
+[Lorem Picsum](https://picsum.photos/) &mdash; Just add your desired image size (width & height) after our URL, and you'll get a random image. [example](https://picsum.photos/200/300)
+
+[Colorlib](https://colorlib.com/wp/template/archlab/) &mdash; html templates., [example](https://colorlib.com/preview/theme/archlab/)
+
+[7 Best Pure JavaScript Form Validation Libraries (2020 Update)](https://www.cssscript.com/best-javascript-form-validator/) &mdash; The native [HTML5 validation](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) feature is not enough. We also recommend you to use a JavaScript library to extend and enhance the default form validation functionalities for better user experiences on modern web design.
