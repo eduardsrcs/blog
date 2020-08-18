@@ -77,4 +77,17 @@ class PostsController extends Controller
         $post->save();
         return redirect('posts');
     }
+
+    public function createComment(Request $request)
+    {
+        $comment = new Comment;
+        $comment->title = $request->cname;
+        $comment->title_desc = $request->csdedc;
+        // $comment->rating = 0;
+        $comment->content = $request->ccontent;
+        $comment->post_id = $request->id;
+        // $comment->user_id = 12;
+        $comment->save();
+        return redirect('posts');
+    }
 }

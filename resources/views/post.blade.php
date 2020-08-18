@@ -20,8 +20,9 @@
   <p>{{$post->created_at}}</p>
   <p>{{$post->content}}</p>
   <a href="/posts" class="w3-button w3-blue w3-padding-large w3-margin-bottom">Back to posts</a>
-  <a href="/post/update/{{$post->id}}" class="w3-button w3-grey w3-padding-large w3-margin-bottom">Update this posts</a>
-  <a href="/post/remove/{{$post->id}}" class="w3-button w3-red w3-padding-large w3-margin-bottom">Remove this posts</a>
+  <a href="/post/update/{{$post->id}}" class="w3-button w3-grey w3-padding-large w3-margin-bottom">Update this post</a>
+  <a href="/post/remove/{{$post->id}}" class="w3-button w3-red w3-padding-large w3-margin-bottom">Remove this post</a>
+  <a href="/post/writecomment/{{$post->id}}" class="w3-button w3-yellow w3-padding-large w3-margin-bottom">Write comment</a>
 
   <h3>Comments</h3>
   @foreach($comments as $comment)

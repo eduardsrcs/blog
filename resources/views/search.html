@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <input type="text" id="search">
+    <div id="res"></div>
+	<script>
+        const elem = document.getElementById('search')
+        const res = document.getElementById('res')
+
+        elem.oninput = function(e) {
+            fetch('http://localhost:8000/search')
+                .then(res => res.json())
+                .then(data => parseWord(data, e.target.value))
+        }
+
+        function parseWord(data, val) {
+            let out = ''
+            data.forEach(element => {
+                if(element.text.toLowerCase().includes(val.toLowerCase())){
+                    out += `<a href="/posts/${element.id}">${element.text}</a><br>`
+                }
+            })
+            if(val.length){
+                res.innerHTML = out
+            }
+            else {
+                res.innerHTML = ''
+            }
+        }
+	</script>
+</body>
+</html>

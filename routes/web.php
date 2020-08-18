@@ -29,6 +29,12 @@ Route::get('/post/remove/{id}', 'PostsController@remove');
 Route::get('/post/update/{id}', 'PostsController@updateForm');
 Route::post('/updatepost', 'PostsController@updatePost')->name('post.update');
 
+Route::get('/post/writecomment/{id}', function($id){return view('createcommentform', compact('id'));});
+Route::post('/createcomment', 'PostsController@createComment')->name('comment.create');
+
+Route::get('/search', 'SearchController@search');
+Route::get('/s', function () { return view('search'); });
+
 
 Route::get('/files', function () { return view('files'); });
 Route::post('/files/upload', 'ImageController@upload')->name('image.upload');
